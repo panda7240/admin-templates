@@ -42,3 +42,9 @@ gem 'devise', '3.2.4'
 
 #权限认证模块
 gem 'cancan', '1.6.10'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'therubyracer'
+
+gem 'less-rails'
