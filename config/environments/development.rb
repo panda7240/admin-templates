@@ -34,4 +34,8 @@ AdminTemplates::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 end
+
+
