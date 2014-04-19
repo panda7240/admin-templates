@@ -36,3 +36,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+#用户认证,登录,注册,密码找回等功能模块
+gem 'devise', '3.2.4'
+
+#权限认证模块
+gem 'cancan', '1.6.10'
