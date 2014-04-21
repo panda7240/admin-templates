@@ -18,13 +18,21 @@
       </button>
       <a class="brand" href="#">管理系统模板</a>
       <div class="nav-collapse collapse">
-        <p class="navbar-text pull-right">
-          Logged in as <a href="#" class="navbar-link">Username</a>
-        </p>
         <ul class="nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
+          <% if user_signed_in? %>
+          <li class="dropdown open" style="float:rigth;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "用户详情", @user %></li>
+              <li><%= link_to "账号设置", profile_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "退出",destroy_user_session_path, method: "delete" %></li>
+            </ul>
+          </li>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

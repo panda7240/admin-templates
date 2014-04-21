@@ -1,0 +1,52 @@
+<% provide(:title, '注册') %>
+<div class="panel panel-primary">
+  <%= form_for @user , html:{class:"form-horizontal"} do |f| %>
+    <!--如果局部视图有要在多个控制器中使用, 最好放在shared文件夹下(rails的约定)-->
+    <%= render 'shared/error_messages', object: f.object %>
+  <fieldset>
+    <legend>注册</legend>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">用户名</label>
+      <div class="col-lg-8">
+        <%= f.text_field :name, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-8">
+        <%= f.text_field :email, class:"form-control",placeholder:"eg:admin@yougou.com" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-lg-2 control-label">手机</label>
+      <div class="col-lg-8">
+        <%= f.text_field :mobile, class:"form-control",placeholder:"eg:13800138000" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-lg-2 control-label">密码</label>
+      <div class="col-lg-8">
+        <%= f.password_field :password, class:"form-control",placeholder:"密码长度8-20" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-lg-2 control-label">确认密码</label>
+      <div class="col-lg-8">
+        <%= f.password_field :password_confirmation, class:"form-control",placeholder:"密码长度8-20" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+        <%= link_to '取消', root_path, :class => 'btn btn-default' %>
+        <%= f.submit "创建", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </fieldset>
+  <% end %>
+
+ </div>
