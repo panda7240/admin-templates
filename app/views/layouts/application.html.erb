@@ -33,6 +33,8 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
+
+    <%if user_signed_in?%>
     <div class="span2">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
@@ -55,19 +57,20 @@
         </ul>
       </div><!--/.well -->
     </div><!--/span-->
+    <% end %>
+
 
     <div class="span10" style="margin-top: 50px;">
       <%= yield %>
     </div><!--/row-->
   </div><!--/span-->
 </div><!--/row-->
-
+<%if user_signed_in?%>
 <hr>
-
 <footer>
   <p style="float:right;margin-right: 10px">© By panda 2014</p>
 </footer>
-
+<% end %>
 </div><!--/.fluid-container-->
 
 
