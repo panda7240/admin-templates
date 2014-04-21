@@ -13,4 +13,8 @@
 
 
 ## 三. 使用步骤
-1. 
+1. git clone https://github.com/siye1982/admin-templates.git
+2. bundle install
+3. 默认数据库是sqlite3, 可以根据需要变更数据库
+4. rails g scaffold Item title:string description:text --skip-stylesheets  用脚手架添加资源,Item是你的自定义资源
+5. rails g bootstrap:themed items -f  给item资源加样式
